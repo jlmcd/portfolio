@@ -1,0 +1,99 @@
+.skills {
+	// text-align: center;
+	background: #111;
+	width: 100vw;
+	min-height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 10vw;
+	h1 {
+		font-family: neon2, cursive;
+		color: white;
+		font-size: 1.2em;
+		margin-top: 2em;
+	}
+}
+
+#html5 {
+	overflow: hidden;
+	width: 100px;
+	height: 100px;
+	filter: drop-shadow(0 0 2vw #fa1c16) drop-shadow(0 0 0.4vw #fed128) drop-shadow(0.5vw 0.5vw 0.1vw #806914);
+	/* animation: flicker 1s infinite; */
+}
+#css3 {
+	
+	overflow: hidden;
+	width: 100px;
+	height: 100px;
+	filter: drop-shadow(0 0 2vw #1a16fa) drop-shadow(0 0 0.4vw #28fefe) drop-shadow(0.5vw 0.5vw 0.1vw #141680);
+	/* animation: flicker 1s infinite; */
+}
+#javascript {
+	
+	overflow: hidden;
+	width: 100px;
+	height: 100px;
+	filter: drop-shadow(0 0 2vw #ebfa16) drop-shadow(0 0 0.4vw #fafe28) drop-shadow(0.5vw 0.5vw 0.1vw #806314);
+	/* animation: flicker 1s infinite; */
+}
+#react {
+	
+	overflow: hidden;
+	width: 100px;
+	height: 100px;
+	filter: drop-shadow(0 0 2vw #86dde9) drop-shadow(0 0 0.4vw #45afcc) drop-shadow(0.5vw 0.5vw 0.1vw #076985);
+}
+#redux {
+	
+	overflow: hidden;
+	width: 100px;
+	height: 100px;
+	filter: drop-shadow(0 0 2vw #f264ff) drop-shadow(0 0 0.4vw #b000c0) drop-shadow(0.5vw 0.5vw 0.1vw #62006b);
+}
+#express {
+	margin-bottom: -20px;
+	margin-top: -20px;
+	overflow: hidden;
+	width: 140px;
+	height: 140px;
+	filter: drop-shadow(0 0 2vw #fff) drop-shadow(0 0 0.4vw #fff) drop-shadow(0.5vw 0.5vw 0.1vw #a5a5a5);
+}
+#nodejs {
+	overflow: hidden;
+	width: 100px;
+	height: 100px;
+	filter: drop-shadow(0 0 2vw #adff9b) drop-shadow(0 0 0.4vw #32991b) drop-shadow(0.5vw 0.5vw 0.1vw #176805);
+}
+#postgresql {
+	overflow: hidden;
+	width: 100px;
+	height: 100px;
+	filter: drop-shadow(0 0 2vw #fff) drop-shadow(0 0 0.4vw #fff) drop-shadow(0.5vw 0.5vw 0.1vw #a5a5a5);
+}
+#sass {
+	margin-bottom: -20px;
+	margin-top: -20px;
+	overflow: hidden;
+	width: 140px;
+	height: 140px;
+	filter: drop-shadow(0 0 2vw #cd669a) drop-shadow(0 0 0.4vw #fb9dcc) drop-shadow(0.5vw 0.5vw 0.1vw #b30c5f);
+}
+
+.html5,
+.css3,
+.javascript,
+.react,
+.redux,
+.express,
+.nodejs,
+.postgresql,
+.sass {
+	display: inline-block;
+	margin: 2rem 5rem;
+}
