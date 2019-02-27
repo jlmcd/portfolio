@@ -1,0 +1,87 @@
+.projects {
+  background: #111;
+	width: 100vw;
+	min-height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+  flex-wrap: wrap;
+  h1 {
+    font-family: neon2, cursive;
+    color: white;
+    font-size: 1.2em;
+    margin-top: 2em;
+	}
+	> h1 {
+		width: 100vw;
+		font-size: 2em;
+	}
+  .home-button {
+    position: absolute;
+    left: 2rem;
+		top: 2rem;
+		cursor: pointer;
+    i {
+      text-shadow: 0 0 1vw #fa1c16, 0 0 3vw #fa1c16, 0 0 10vw #fa1c16,
+        0 0 10vw #fa1c16, 0 0 0.4vw #fed128, 0.5vw 0.5vw 0.1vw #806914;
+      color: #fed128;
+      &:hover {
+        animation: button-flicker-1 2s linear;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+  .project-card {
+    max-width: 35vw;
+    text-align: center;
+    margin: 2rem;
+    .image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      height: 300px;
+      margin-bottom: 2rem;
+      width: 100%;
+      text-align: center;
+      img {
+        display: inline-block;
+        height: 100%;
+      }
+    }
+    h2 {
+      font-family: neon2, cursive;
+      font-size: 2em;
+      margin-bottom: 1rem;
+    }
+    h3 {
+      font-family: neon2, cursive;
+      font-size: 1em;
+      color: white;
+      line-height: 1.5rem;
+    }
+    p {
+      color: white;
+      font-family: sans-serif;
+      text-align: left;
+      margin-bottom: 1rem;
+      line-height: 1.3rem;
+    }
+    a {
+      @extend p;
+      text-decoration: none;
+      display: block;
+      color: #f372ff;
+      text-shadow: 0 0 1vw #162dfa77, 0 0 3vw #162dfa77, 0 0 10vw #162dfa77, 0 0 10vw #162dfa77, 0 0 0.4vw #f372ff77, 0.5vw 0.5vw 0.1vw #6e148077;
+    }
+  }
+}
+
+@media(max-width: 1279px) {
+  .projects > .project-card {
+    max-width: 80vw;
+  }
+}

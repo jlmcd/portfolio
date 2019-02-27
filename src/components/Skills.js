@@ -4,6 +4,8 @@ import "./Skills.scss";
 export default function Skills(props) {
   return (
     <div className="skills">
+    <div className='home-button' onClick={() => props.homeFn()}><i className="fas fa-arrow-left fa-3x"></i></div>
+    <h1>My Skills</h1>
       <div className="react">
         <svg
           id="react"
@@ -126,7 +128,7 @@ export default function Skills(props) {
           />
           <path
             d="M279.942,634.233c-6.427,9.695 -9.844,20.981 -9.844,32.509c0,33.167 27.75,60.094 61.929,60.094c34.179,0 61.929,-26.927 61.929,-60.094c0,-33.167 -27.75,-60.094 -61.929,-60.094c-1.816,0 -3.631,0.078 -5.44,0.232"
-            style={{fill:'none',stroke:'#eb00ff',strokeWidth:'30px'}}
+            style={{ fill: "none", stroke: "#eb00ff", strokeWidth: "30px" }}
           />
           <path
             d="M325.416,602.561c-83.395,-145.346 -107.466,-402.325 50.505,-507.303c28.899,-19.205 62.761,-26.665 96.96,-27.697c144.427,-4.357 210.852,163.648 190.102,286.479"
@@ -142,11 +144,11 @@ export default function Skills(props) {
           />
           <path
             d="M467.744,326.475c-11.668,-16.125 -30.677,-25.72 -50.955,-25.72c-34.384,0 -62.299,27.14 -62.299,60.569c0,33.429 27.915,60.569 62.299,60.569c34.407,0 44.779,-14.676 59.76,-37.208"
-            style={{fill:'none',stroke: '#eb00ff',strokeWwidth: '30px'}}
+            style={{ fill: "none", stroke: "#eb00ff", strokeWwidth: "30px" }}
           />
           <path
             d="M673.909,644.799c30.789,-4.487 53.602,-30.639 53.602,-61.447c0,-34.28 -28.113,-62.11 -62.74,-62.11c-34.628,0 -63.571,27.84 -62.741,62.11c0.605,24.948 9.471,31.934 13.732,40.482"
-            style={{fill:'none',stroke:'#eb00ff',strokeWidth:'30px'}}
+            style={{ fill: "none", stroke: "#eb00ff", strokeWidth: "30px" }}
           />
           <path
             d="M146.502,441.665c-53.669,34.566 -98.993,93.499 -121.13,153.08c-35.728,96.163 -20.05,221.786 70.971,281.381c120.781,79.08 276.111,44.589 394.518,-25.493c12.535,-7.419 42.329,-26.511 55.868,-39.838"
@@ -394,6 +396,29 @@ export default function Skills(props) {
           />
         </svg>
         <h1>Sass</h1>
+      </div>
+      <div className="socket-io">
+        <svg
+          id="socket-io"
+          viewBox="0 0 1069 1069"
+          style={{
+            fillRule: "evenodd",
+            clipRule: "evenodd",
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+            strokeMiterlimit: 1.5
+          }}
+        >
+          <path
+            d="M513.306,565.419l252.803,-364.394l-363.017,297.577l108.836,-0.689"
+            style={{ fill: "none", stroke: "#fff", strokeWidth: "40px" }}
+          />
+          <path
+            d="M395.515,795.49l272.09,-230.071l-154.914,3.009l-270.151,401.013c131.377,88.169 295.537,112.311 446.735,65.699c276.592,-85.268 431.922,-379.053 346.653,-655.645c-85.269,-276.592 -379.054,-431.922 -655.646,-346.653c-276.591,85.269 -431.921,379.054 -346.653,655.645c21.38,69.349 101.449,172.406 148.901,227.312"
+            style={{ fill: "none", stroke: "#fff", strokeWidth: "40px" }}
+          />
+        </svg>
+        <h1>Socket.IO</h1>
       </div>
     </div>
   );
