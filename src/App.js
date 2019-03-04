@@ -12,33 +12,45 @@ class App extends Component {
     showContact: false,
     showSkills: false,
     showProjects: false,
-    blackout: false
+    blackout: false,
+    showMenu: false
   };
 
   componentDidMount = () => {
     // this makes it so we don't see all the hidden components at once when the page loads
     setTimeout(() => {
-      document.getElementById('body').classList.remove('hide-loading')
+      document.getElementById("body").classList.remove("hide-loading");
     }, 20);
-  }
+  };
 
-  toggleAbout = () => {
+  toggleAbout = (time) => {
     this.setState({
-      blackout: true
-    })
-    setTimeout(() => {
+      blackout: true,
+      showMenu: false
+    });
+    if (!this.state.showAbout) {
+      setTimeout(() => {
+        this.setState({
+          showAbout: !this.state.showAbout,
+          showContact: false,
+          showSkills: false,
+          showProjects: false
+        });
+      }, time);
+    } else {
       this.setState({
         showAbout: !this.state.showAbout,
         showContact: false,
         showSkills: false,
         showProjects: false
       });
-    }, 2000);
+    }
   };
-  toggleContact = () => {
+  toggleContact = (time) => {
     this.setState({
-      blackout: true
-    })
+      blackout: true,
+      showMenu: false
+    });
     setTimeout(() => {
       this.setState({
         showAbout: false,
@@ -46,12 +58,13 @@ class App extends Component {
         showSkills: false,
         showProjects: false
       });
-    }, 2000);
+    }, time);
   };
-  toggleSkills = () => {
+  toggleSkills = (time) => {
     this.setState({
-      blackout: true
-    })
+      blackout: true,
+      showMenu: false
+    });
     setTimeout(() => {
       this.setState({
         showAbout: false,
@@ -59,12 +72,13 @@ class App extends Component {
         showSkills: !this.state.showSkills,
         showProjects: false
       });
-    }, 2000);
+    }, time);
   };
-  toggleProjects = () => {
+  toggleProjects = (time) => {
     this.setState({
-      blackout: true
-    })
+      blackout: true,
+      showMenu: false
+    });
     setTimeout(() => {
       this.setState({
         showAbout: false,
@@ -72,33 +86,74 @@ class App extends Component {
         showSkills: false,
         showProjects: !this.state.showProjects
       });
-    }, 2000);
+    }, time);
   };
   reset = () => {
+    for (let prop in this.state) {
+      this.setState({[prop]: false})
+    }
+    // this.setState({
+    //   blackout: false,
+    //   showAbout: false,
+    //   showSkills: false,
+    //   showProjects: false,
+    //   showContact: false,
+    //   showMenu: false
+    // });
+  };
+  toggleMenu = () => {
     this.setState({
-      blackout: false,
-      showAbout: false,
-      showSkills: false,
-      showProjects: false,
-      showContact: false
-    })
-  }
+      showMenu: !this.state.showMenu
+    });
+  };
 
   render() {
-    const { showAbout, showContact, showSkills, showProjects, blackout } = this.state;
+    const {
+      showAbout,
+      showContact,
+      showSkills,
+      showProjects,
+      blackout
+    } = this.state;
     return (
       <div className="App">
-        <div className="background" />
-        <h2 onClick={this.toggleContact} className="top">Contact</h2>
-        <h2 onClick={this.toggleAbout} className="left">About</h2>
-        <h2 onClick={this.toggleSkills} className="right">Skills</h2>
-        <h2 onClick={this.toggleProjects} className="bottom">Projects</h2>
-        <div className="name">
-          <h1 className={blackout && 'blackout'}>Jonathan</h1>
-          <h1 className={blackout && 'blackout'}>___</h1>
-          <h1 className={blackout && 'blackout'}>McDonald</h1>
+        <div className="menu-container" onClick={this.toggleMenu}>
+          <i className="fa fa-bars fa-3x" />
         </div>
-        <h2 className={blackout ? 'welcome-message blackout' : 'welcome-message'}>Full-stack Developer</h2>
+        <div
+          className={
+            this.state.showMenu ? "fullscreen-menu show" : "fullscreen-menu"
+          }
+        >
+          {(showAbout || showContact || showSkills || showProjects) && <h3 onClick={this.reset}>Home</h3>}
+          {!showContact && <h3 onClick={() => this.toggleContact(750)}>Contact</h3>}
+          {!showAbout && <h3 onClick={() => this.toggleAbout(750)}>About</h3>}
+          {!showSkills && <h3 onClick={() => this.toggleSkills(750)}>Skills</h3>}
+          {!showProjects && <h3 onClick={() => this.toggleProjects(750)}>Projects</h3>}
+        </div>
+        <div className="background" />
+        <h2 onClick={() => this.toggleContact(2000)} className="top">
+          Contact
+        </h2>
+        <h2 onClick={() => this.toggleAbout(2000)} className="left">
+          About
+        </h2>
+        <h2 onClick={() => this.toggleSkills(2000)} className="right">
+          Skills
+        </h2>
+        <h2 onClick={() => this.toggleProjects(2000)} className="bottom">
+          Projects
+        </h2>
+        <div className="name">
+          <h1 className={blackout ? "blackout" : ""}>Jonathan</h1>
+          <h1 className={blackout ? "blackout" : ""}>___</h1>
+          <h1 className={blackout ? "blackout" : ""}>McDonald</h1>
+        </div>
+        <h2
+          className={blackout ? "welcome-message blackout" : "welcome-message"}
+        >
+          Full-stack Developer
+        </h2>
         <div className={showAbout ? "show" : "hide"}>
           <About homeFn={this.reset} />
         </div>

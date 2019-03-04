@@ -11,6 +11,7 @@
 	justify-content: space-around;
 	align-items: center;
   padding: 10vw;
+  flex-wrap: wrap;
   .home-button {
     position: absolute;
     left: 2rem;
@@ -43,15 +44,14 @@
     color: white;
     line-height: 5rem;
     font-size: 1.2rem;
+    min-width: 300px;
   }
 }
 
-#peace {
-  // position: absolute;
-  flex: 1;
-  left: 10vw;
-	overflow: hidden;
-	width: auto;
-	height: 60vh;
-	filter: drop-shadow(0 0 2vw #fff) drop-shadow(0 0 0.4vw #fff) drop-shadow(0.5vw 0.5vw 0.1vw #a5a5a5);
+#piano {
+  filter: drop-shadow(0 0 2vw #cd669a) drop-shadow(0 0 0.4vw #fb9dcc)
+    drop-shadow(0.5vw 0.5vw 0.1vw #b30c5f);
+  width: 45%;
+  min-width: 300px;
+  margin: 3rem;
 }
