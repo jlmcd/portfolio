@@ -90,14 +90,6 @@ export default class Home extends Component {
     for (let prop in this.state) {
       this.setState({ [prop]: false });
     }
-    // this.setState({
-    //   blackout: false,
-    //   showAbout: false,
-    //   showSkills: false,
-    //   showProjects: false,
-    //   showContact: false,
-    //   showMenu: false
-    // });
   };
   toggleMenu = () => {
     this.setState({
@@ -116,7 +108,7 @@ export default class Home extends Component {
     return (
       <div className="App">
         <div className="menu-container" onClick={this.toggleMenu}>
-          <i className="fa fa-bars fa-3x" />
+          <i className="fa fa-bars fa-2x" />
         </div>
         <div
           className={
@@ -160,7 +152,7 @@ export default class Home extends Component {
         >
           Full-stack Developer
         </h2>
-        <div className={showAbout ? "show" : "hide"}>
+        {/* <div className={showAbout ? "show" : "hide"}>
           <About homeFn={this.reset} />
         </div>
         <div className={showContact ? "show" : "hide"}>
@@ -171,7 +163,7 @@ export default class Home extends Component {
         </div>
         <div className={showProjects ? "show" : "hide"}>
           <Projects homeFn={this.reset} />
-        </div>
+        </div> */}
       </div>
     );
   }
