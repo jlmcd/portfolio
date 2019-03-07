@@ -10,13 +10,6 @@ export default class Home extends Component {
     showMenu: false
   };
 
-  componentDidMount = () => {
-    // this makes it so we don't see all the hidden components at once when the page loads
-    setTimeout(() => {
-      document.getElementById("body").classList.remove("hide-loading");
-    }, 20);
-  };
-
   toggleAbout = time => {
     this.setState({
       blackout: true,
@@ -24,7 +17,7 @@ export default class Home extends Component {
     });
     if (!this.state.showAbout) {
       setTimeout(() => {
-        this.props.history.push('/about')
+        this.props.history.push("/about");
       }, time);
     }
   };
@@ -34,7 +27,7 @@ export default class Home extends Component {
       showMenu: false
     });
     setTimeout(() => {
-      this.props.history.push('/contact')
+      this.props.history.push("/contact");
     }, time);
   };
   toggleSkills = time => {
@@ -43,7 +36,7 @@ export default class Home extends Component {
       showMenu: false
     });
     setTimeout(() => {
-      this.props.history.push('/skills')
+      this.props.history.push("/skills");
     }, time);
   };
   toggleProjects = time => {
@@ -52,7 +45,7 @@ export default class Home extends Component {
       showMenu: false
     });
     setTimeout(() => {
-      this.props.history.push('/projects')
+      this.props.history.push("/projects");
     }, time);
   };
   reset = () => {
@@ -121,18 +114,6 @@ export default class Home extends Component {
         >
           Full-stack Developer
         </h2>
-        {/* <div className={showAbout ? "show" : "hide"}>
-          <About homeFn={this.reset} />
-        </div>
-        <div className={showContact ? "show" : "hide"}>
-          <Contact homeFn={this.reset} />
-        </div>
-        <div className={showSkills ? "show" : "hide"}>
-          <Skills homeFn={this.reset} />
-        </div>
-        <div className={showProjects ? "show" : "hide"}>
-          <Projects homeFn={this.reset} />
-        </div> */}
       </div>
     );
   }

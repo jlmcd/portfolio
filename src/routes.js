@@ -7,13 +7,27 @@ import Contact from './components/Contact'
 import Projects from './components/Projects'
 import Skills from './components/Skills'
 import Home from './components/Home'
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+
 
 export default (
-    <Switch>
-        <Route exact path = '/' component={Home}></Route>
-        <Route path = '/about' component={About}></Route>
-        <Route path = '/contact' component={Contact}></Route>
-        <Route path = '/projects' component={Projects}></Route>
-        <Route path = '/skills' component={Skills}></Route>
-    </Switch>
+  <Route
+  render={({ location }) => (
+    <TransitionGroup>
+      <CSSTransition
+        key={location.pathname}
+        classNames="fade"
+        timeout={1000}
+      >
+        <Switch location={location}>
+          <Route exact path="/" component={Home} />
+          <Route path="/about" render={About} />
+          <Route path="/contact" render={Contact} />
+          <Route path="/projects" render={Projects} />
+          <Route path="/skills" render={Skills} />
+        </Switch>
+      </CSSTransition>
+    </TransitionGroup>
+  )}
+/>
 )

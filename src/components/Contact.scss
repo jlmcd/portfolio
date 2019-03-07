@@ -1,25 +1,25 @@
 .contact {
-	background: #111;
-	width: 100vw;
-	min-height: 100vh;
-	position: absolute;
-	top: 0;
-	left: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	.contact-container {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-wrap: wrap-reverse;
-	}
-	.home-button {
+  background: #111;
+  width: 100vw;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+  }
+  .home-button {
     position: absolute;
     left: 2rem;
-		top: 2rem;
-		cursor: pointer;
+    top: 2rem;
+    cursor: pointer;
     i {
       text-shadow: 0 0 1vw #fa1c16, 0 0 3vw #fa1c16, 0 0 10vw #fa1c16,
         0 0 10vw #fa1c16, 0 0 0.4vw #fed128, 0.5vw 0.5vw 0.1vw #806914;
@@ -30,60 +30,65 @@
       }
     }
   }
-	h1 {
+  h1 {
     display: inline-block;
-		font-family: neon2, cursive;
-		color: white;
-		font-size: 2em;
-		margin-bottom: 2em;
+    font-family: neon2, cursive;
+    color: white;
+    font-size: 2em;
+    margin-bottom: 2em;
   }
-	a > i {
-		width: 3rem;
-		color: white;
-		transition: 1s;
-		&:hover {
-			color: #fa1c16;
-		}
-	}
-	.contact-text {
-		a, h3 {
-			text-decoration: none;
-			color: white;
-			font-family: sans-serif;
-			line-height: 1.5rem;
-			transition: .2s;
-		}
-	}
+  a > i {
+    width: 3rem;
+    color: white;
+    transition: 1s;
+    &:hover {
+      color: #fa1c16;
+    }
+  }
+  .contact-text {
+    a,
+    h3 {
+      text-decoration: none;
+      color: white;
+      font-family: sans-serif;
+      line-height: 1.5rem;
+      transition: 0.2s;
+    }
+  }
 }
 
 #peace {
   // position: absolute;
   // flex: 1;
   // left: 10vw;
-	// overflow: hidden;
-	// height: 60vh;
-	width: 45%;
+  // overflow: hidden;
+  // height: 60vh;
+  width: 45%;
   min-width: 300px;
   margin: 3rem;
-	filter: drop-shadow(0 0 2vw #fff) drop-shadow(0 0 0.4vw #fff) drop-shadow(0.5vw 0.5vw 0.1vw #a5a5a5);
+  filter: drop-shadow(0 0 2vw #fff) drop-shadow(0 0 0.4vw #fff)
+    drop-shadow(0.5vw 0.5vw 0.1vw #a5a5a5);
 }
 
-@media(max-width: 400px) {
-	.contact > h1 {
-		margin-bottom: 	1rem;
-	}
-	#peace {
-		min-width: auto;
-		width: 80%;
-		// margin: 0;
-	}
+@media (max-width: 400px) {
+  .contact > h1 {
+    margin-bottom: 1rem;
+  }
+  #peace {
+    min-width: auto;
+    width: 80%;
+    // margin: 0;
+  }
+  .home-button i {
+		font-size: 2rem;
+  }
 }
-@media(max-height: 825px) {
-	#peace {
-		width: auto;
-		height: 60vh;
-	}
-	.contact > h1 {
-		margin-bottom: 1rem;
-	}
+@media (max-height: 825px) {
+  #peace {
+    width: auto;
+    height: 60vh;
+  }
+  .contact > h1 {
+    margin-bottom: 1rem;
+  }
 }
