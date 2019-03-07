@@ -4,7 +4,7 @@ import "./About.scss";
 export default function About(props) {
   return (
     <div className="about">
-      <div className="home-button" onClick={() => props.homeFn()}>
+      <div className="home-button" onClick={() => props.history.goBack()}>
         <i className="fas fa-arrow-left fa-3x" />
       </div>
       <div>

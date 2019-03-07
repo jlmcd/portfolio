@@ -13,7 +13,7 @@ export default function Projects(props) {
   };
   return (
     <div className="projects">
-      <div className="home-button" onClick={() => props.homeFn()}>
+      <div className="home-button" onClick={() => props.history.goBack()}>
         <i className="fas fa-arrow-left fa-3x" />
       </div>
       <h1>Projects</h1>

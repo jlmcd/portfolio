@@ -4,7 +4,7 @@ import "./Contact.scss";
 export default function Contact(props) {
   return (
     <div className="contact">
-      <div className="home-button" onClick={() => props.homeFn()}>
+      <div className="home-button" onClick={() => props.history.goBack()}>
         <i className="fas fa-arrow-left fa-3x" />
       </div>
       <h1>Contact</h1>
