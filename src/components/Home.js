@@ -6,10 +6,6 @@ import Projects from "./Projects";
 
 export default class Home extends Component {
   state = {
-    showAbout: false,
-    showContact: false,
-    showSkills: false,
-    showProjects: false,
     blackout: false,
     showMenu: false
   };
@@ -28,20 +24,8 @@ export default class Home extends Component {
     });
     if (!this.state.showAbout) {
       setTimeout(() => {
-        this.setState({
-          showAbout: !this.state.showAbout,
-          showContact: false,
-          showSkills: false,
-          showProjects: false
-        });
+        this.props.history.push('/about')
       }, time);
-    } else {
-      this.setState({
-        showAbout: !this.state.showAbout,
-        showContact: false,
-        showSkills: false,
-        showProjects: false
-      });
     }
   };
   toggleContact = time => {
@@ -50,12 +34,7 @@ export default class Home extends Component {
       showMenu: false
     });
     setTimeout(() => {
-      this.setState({
-        showAbout: false,
-        showContact: !this.state.showContact,
-        showSkills: false,
-        showProjects: false
-      });
+      this.props.history.push('/contact')
     }, time);
   };
   toggleSkills = time => {
@@ -64,12 +43,7 @@ export default class Home extends Component {
       showMenu: false
     });
     setTimeout(() => {
-      this.setState({
-        showAbout: false,
-        showContact: false,
-        showSkills: !this.state.showSkills,
-        showProjects: false
-      });
+      this.props.history.push('/skills')
     }, time);
   };
   toggleProjects = time => {
@@ -78,12 +52,7 @@ export default class Home extends Component {
       showMenu: false
     });
     setTimeout(() => {
-      this.setState({
-        showAbout: false,
-        showContact: false,
-        showSkills: false,
-        showProjects: !this.state.showProjects
-      });
+      this.props.history.push('/projects')
     }, time);
   };
   reset = () => {

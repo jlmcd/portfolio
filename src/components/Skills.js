@@ -4,7 +4,7 @@ import "./Skills.scss";
 export default function Skills(props) {
   return (
     <div className="skills">
-    <div className='home-button' onClick={() => props.homeFn()}><i className="fas fa-arrow-left fa-3x"></i></div>
+    <div className='home-button' onClick={() => props.history.goBack()}><i className="fas fa-arrow-left fa-3x"></i></div>
     <h1>My Skills</h1>
       <div className="react">
         <svg
