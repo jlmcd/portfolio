@@ -77,27 +77,27 @@ export default function Contact(props) {
         </svg>
         <div>
           <div className="icons">
-            <a href="https://github.com/trair">
+            <a href="https://github.com/jlmcd">
               <i className="fab fa-github-square fa-3x" />
             </a>
             <a href="https://www.linkedin.com/in/jon-mcd/">
               <i className="fab fa-linkedin fa-3x" />
             </a>
             <a
-              href="mailto:jonathanlmcd@gmail.com?Subject=Hi,%20Jonathan!"
+              href="mailto:jonathan@mcdonald.email?Subject=Hi,%20Jonathan!"
               target="_top"
             >
               <i className="fas fa-envelope fa-3x" />
             </a>
           </div>
           <div className="contact-text">
-            <a href="https://github.com/trair">
-              <h3>github.com/trair</h3>
+            <a href="https://github.com/jlmcd">
+              <h3>github.com/jlmcd</h3>
             </a>
             <a href="https://www.linkedin.com/in/jon-mcd/">
               <h3>linkedin.com/in/jon-mcd/</h3>
             </a>
-            <h3>jonathanlmcd@gmail.com</h3>
+            <h3>jonathan@mcdonald.email</h3>
           </div>
         </div>
       </div>

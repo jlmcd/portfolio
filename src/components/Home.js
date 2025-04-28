@@ -1,8 +1,4 @@
 import React, { Component } from "react";
-import About from "./About";
-import Contact from "./Contact";
-import Skills from "./Skills";
-import Projects from "./Projects";
 
 export default class Home extends Component {
   state = {
