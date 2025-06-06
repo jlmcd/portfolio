@@ -1,10 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Contact.scss";
 
-export default function Contact(props) {
+export default function Contact() {
+  const navigate = useNavigate();
   return (
     <div className="contact">
-      <div className="home-button" onClick={() => props.history.goBack()}>
+      <div className="home-button" onClick={() => navigate(-1)}>
         <i className="fas fa-arrow-left fa-3x" />
       </div>
       <h1>Contact</h1>

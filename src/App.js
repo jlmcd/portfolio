@@ -1,17 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 import "./App.scss";
 import "./reset.css";
-import routes from "./routes";
+import AnimatedRoutes from "./AnimatedRoutes";
 
-
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        {routes}
-      </div>
-    );
-  }
+function App() {
+  return (
+    <div className="App">
+      <AnimatedRoutes />
+    </div>
+  );
 }
 
 export default App;
