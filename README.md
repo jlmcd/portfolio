@@ -66,3 +66,20 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## Running the backend server
+
+To start the Express backend you will need a `.env` file in the project root
+containing a `SERVER_PORT` variable. For example:
+
+```env
+SERVER_PORT=4000
+```
+
+Once the environment variable is set you can launch the server with:
+
+```bash
+node server/server.js
+```
+
+This will start the backend on the port defined in your `.env` file.
