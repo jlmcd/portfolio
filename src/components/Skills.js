@@ -1,10 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Skills.scss";
 
-export default function Skills(props) {
+export default function Skills() {
+  const navigate = useNavigate();
   return (
     <div className="skills">
-    <div className='home-button' onClick={() => props.history.goBack()}><i className="fas fa-arrow-left fa-3x"></i></div>
+    <div className='home-button' onClick={() => navigate(-1)}><i className="fas fa-arrow-left fa-3x"></i></div>
     <h1>My Skills</h1>
       <div className="react">
         <svg

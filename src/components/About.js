@@ -1,10 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./About.scss";
 
-export default function About(props) {
+export default function About() {
+  const navigate = useNavigate();
   return (
     <div className="about">
-      <div className="home-button" onClick={() => props.history.goBack()}>
+      <div className="home-button" onClick={() => navigate(-1)}>
         <i className="fas fa-arrow-left fa-3x" />
       </div>
       <div>

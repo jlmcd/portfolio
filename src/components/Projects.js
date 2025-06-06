@@ -1,9 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Projects.scss";
 import Slider from "react-slick";
 import ImageZoom from "react-medium-image-zoom";
 
-export default function Projects(props) {
+export default function Projects() {
+  const navigate = useNavigate();
   const carouselSettings = {
     dots: true,
     infinite: true,
@@ -13,7 +15,7 @@ export default function Projects(props) {
   };
   return (
     <div className="projects">
-      <div className="home-button" onClick={() => props.history.goBack()}>
+      <div className="home-button" onClick={() => navigate(-1)}>
         <i className="fas fa-arrow-left fa-3x" />
       </div>
       <h1>Projects</h1>
