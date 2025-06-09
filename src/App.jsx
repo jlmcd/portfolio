@@ -1,4 +1,3 @@
-import React from "react";
 import "./App.scss";
 import "./reset.css";
 import AnimatedRoutes from "./AnimatedRoutes";

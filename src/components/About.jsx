@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./About.scss";
 
@@ -12,9 +11,11 @@ export default function About() {
       <div>
         <h1>About Jonathan</h1>
         <h3>
-          Jonathan is a working musician-turned web developer. His background
-          has turned him into a creative problem solver. He loves learning about
-          new tools and technologies, and then putting them to use.
+          Jonathan is a software engineer with a creative edge. Originally trained
+          as a musician and theatrical director, he brings a collaborative,
+          detail-oriented mindset to his work as a developer. He’s passionate about
+          intuitive UI, accessible design, and building systems that support real
+          people doing meaningful work.
         </h3>
       </div>
       <svg
