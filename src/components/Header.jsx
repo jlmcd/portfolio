@@ -18,7 +18,7 @@ const Header = () => {
           Jonathan McDonald
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-          {['About', 'Skills', 'Projects', 'Contact'].map((item) => (
+          {['About', 'Skills', 'Experience', 'Contact'].map((item) => (
             <a 
               key={item} 
               href={`#${item.toLowerCase()}`}

@@ -10,15 +10,26 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">About Me</h2>
-          <div className="space-y-6 text-lg text-gray-300 leading-relaxed font-light">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
+            About Me
+          </h2>
+          <div className="text-lg text-gray-300 leading-relaxed font-light">
             <p>
-              I'm a developer who bridges the gap between complex backend logic and intuitive frontend design.
-              My approach is user-centric, focused on writing clean, maintainable code for impactful web solutions.
+              I'm a Software Engineer with a creative edge and a track record of
+              managing large-scale API integrations and complex data pipelines.
+              Originally trained as a musician and theatrical director, I bridge
+              the gap between technical architecture and intuitive design by
+              bringing a collaborative, detail-oriented mindset to every
+              codebase I touch.
             </p>
+            <br />
             <p>
-              With a strong foundation in modern web technologies, I excel at transforming complex problems into elegant, scalable applications. 
-              I believe that great software is built on clear communication, continuous learning, and a passion for crafting exceptional digital experiences.
+              Whether I'm architecting a RAG pipeline or refactoring legacy
+              reporting engines, my focus remains on building accessible,
+              scalable systems that support real people doing meaningful work. I
+              believe that great software—much like a great production—is built
+              on clear communication, rigorous logic, and a passion for crafting
+              seamless human experiences.
             </p>
           </div>
         </motion.div>
