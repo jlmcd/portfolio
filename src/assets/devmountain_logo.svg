@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" aria-label="DevMountain Logo" role="img">
+  <title>DevMountain Vector Logo</title>
+  <desc>A precise vector recreation of the DevMountain logo, featuring two geometric mountain peaks enclosed within a perfect circular stroke, meticulously constructed utilizing precise vector paths and unified stroke styling to ensure infinite scalability and crisp rendering.</desc>
+  
+  <g id="devmountain-logo" fill="none" stroke="#29A6DD" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    
+    <path 
+      id="outer-circle" 
+      d="M 200 55 
+         A 145 145 0 1 0 200 345 
+         A 145 145 0 1 0 200 55" 
+    />
+    
+    <path 
+      id="left-mountain" 
+      d="M 200 160 
+         L 177.5 115 
+         L 102.5 265 
+         L 187.5 265" 
+    />
+    
+    <path 
+      id="right-mountain" 
+      d="M 187.5 265 
+         L 242.5 155 
+         L 297.5 265 
+         L 232.5 265" 
+    />
+    
+  </g>
+</svg>
