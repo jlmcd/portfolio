@@ -47,7 +47,7 @@ const Hero = () => {
               <Code2 size={16} /> Building at Kuder
             </div>
             <div className="portrait-label portrait-label--bottom">
-              Denver, Colorado <span className="status-dot" />
+              Product-minded builder <span className="status-dot" />
             </div>
           </div>
           <p className="portrait-caption">

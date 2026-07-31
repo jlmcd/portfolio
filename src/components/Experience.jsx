@@ -26,7 +26,7 @@ const experiences = [
     id: 'reputation',
     company: 'Reputation (formerly Nuvi)',
     role: 'Software Engineer',
-    dates: 'Jan 2020 – 2025',
+    dates: 'Previous role',
     logo: <img src={reputationLogo} alt="Reputation" />,
     summary: 'Built data-rich products for brand intelligence, spanning AI-powered discovery, enterprise reporting, and social publishing infrastructure.',
     caseStudies: [
