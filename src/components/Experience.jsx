@@ -1,24 +1,34 @@
 import { motion } from 'framer-motion';
+import { ArrowUpRight, Building2 } from 'lucide-react';
 import reputationLogo from '../assets/reputation_logo.svg';
 import devmountainLogo from '../assets/devmountain_logo.svg';
 
 const experiences = [
   {
+    id: 'kuder',
+    company: 'Kuder',
+    role: 'Software Engineer',
+    dates: 'Current role',
+    active: true,
+    logo: <Building2 size={26} strokeWidth={1.5} aria-hidden="true" />,
+    summary: 'Developing career-readiness products across a modern React and TypeScript frontend with C# services and SQL Server data systems.',
+    caseStudies: [
+      {
+        title: 'Full-stack product development',
+        challenge: 'Evolving user-facing career tools while working across an established, multi-layer application stack.',
+        implementation: 'Building accessible product experiences in React and TypeScript, supported by C# application services and SQL Server.',
+        impact: 'Bringing frontend, backend, and data concerns together into clear, maintainable product work.',
+        tech: ['React', 'TypeScript', 'C#', 'SQL Server'],
+      },
+    ],
+  },
+  {
     id: 'reputation',
     company: 'Reputation (formerly Nuvi)',
     role: 'Software Engineer',
-    dates: 'Jan 2020 – Present',
-    logo: (
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="w-12 h-12 md:w-16 md:h-16 bg-white rounded-[6px] shadow-lg flex-shrink-0 flex items-center justify-center overflow-hidden"
-      >
-        <img src={reputationLogo} alt="Reputation" className="w-full h-full object-contain" />
-      </motion.div>
-    ),
+    dates: 'Jan 2020 – 2025',
+    logo: <img src={reputationLogo} alt="Reputation" />,
+    summary: 'Built data-rich products for brand intelligence, spanning AI-powered discovery, enterprise reporting, and social publishing infrastructure.',
     caseStudies: [
       {
         title: 'AI-Driven Customer Insights',
@@ -41,24 +51,15 @@ const experiences = [
         impact: 'Created a robust, centralized hub for brand engagement and multi-platform data distribution.',
         tech: ['React', 'Node.js', 'GraphQL', 'API Integration', 'PostgreSQL'],
       },
-    ]
+    ],
   },
   {
     id: 'devmountain',
     company: 'DevMountain',
     role: 'Web Program Instructor',
     dates: 'June 2019 – Jan 2020',
-    logo: (
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="w-12 h-12 md:w-16 md:h-16 bg-white rounded-[6px] shadow-lg flex-shrink-0 flex items-center justify-center overflow-hidden"
-      >
-        <img src={devmountainLogo} alt="DevMountain" className="w-full h-full object-contain" />
-      </motion.div>
-    ),
+    logo: <img src={devmountainLogo} alt="DevMountain" />,
+    summary: 'Taught full-stack web development and helped aspiring engineers build the technical judgment and confidence to begin their careers.',
     caseStudies: [
       {
         title: 'Bootcamp Curriculum & Instruction',
@@ -66,93 +67,85 @@ const experiences = [
         implementation: 'Planned and delivered curriculum for two concurrent classes, focusing on JavaScript, HTML, CSS, and modern framework architecture.',
         impact: 'Mentored and prepared dozens of students for professional engineering careers through rigorous code reviews and debugging sessions.',
         tech: ['JavaScript', 'HTML5', 'CSS3', 'Mentorship', 'Curriculum Design'],
-      }
-    ]
-  }
+      },
+    ],
+  },
 ];
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-24 px-6 md:px-12 bg-dark/20">
-      <div className="container mx-auto max-w-5xl">
+    <section id="experience" className="section section--experience">
+      <div className="section-inner">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-16">
-            Professional Experience
-          </h2>
+          <div className="section-heading experience-heading">
+            <div>
+              <span className="section-kicker">Experience / Selected work</span>
+              <h2>Building across the whole product.</h2>
+            </div>
+            <p>Hands-on engineering, technical problem solving, and close collaboration from interface to infrastructure.</p>
+          </div>
 
-          <div className="space-y-20">
+          <div className="timeline">
             {experiences.map((exp, expIndex) => (
-              <motion.div 
+              <motion.article
                 key={exp.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: expIndex * 0.1 }}
-                className="space-y-8"
+                transition={{ duration: 0.6, delay: expIndex * 0.08 }}
+                className={`experience-entry ${exp.active ? 'experience-entry--active' : ''}`}
               >
-                {/* Company Header */}
-                <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 ml-2">
-                  {exp.logo}
-                  <h3 className="text-xl md:text-3xl font-bold text-white tracking-tight">
-                    {exp.company} <span className="block md:inline font-light text-gray-400 text-lg md:text-2xl mt-1 md:mt-0"><span className="hidden md:inline">|</span> {exp.role} <span className="hidden md:inline">|</span><span className="md:hidden"><br/></span> {exp.dates}</span>
-                  </h3>
+                <div className="timeline-rail">
+                  <span className="timeline-dot" />
+                  <span className="timeline-year">{exp.dates}</span>
                 </div>
-
-                {/* Case Studies */}
-                <div className="space-y-6">
-                  {exp.caseStudies.map((study, index) => (
-                    <motion.div
-                      key={study.title}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: (expIndex * 0.1) + (index * 0.1) }}
-                      className="bg-dark/50 border border-white/5 rounded-2xl p-6 md:p-8 hover:border-accent/30 transition-colors group"
-                    >
-                      <div className="flex flex-col gap-4">
-                        <div>
-                          <h4 className="text-xl md:text-2xl font-bold text-white group-hover:text-accent transition-colors">
-                            {study.title}
-                          </h4>
-                        </div>
-                        
-                        <div className="text-gray-300 font-light space-y-3 text-base md:text-lg">
-                          <p>
-                            <strong className="text-white font-medium">The Challenge:</strong>{' '}
-                            {study.challenge}
-                          </p>
-                          <ul className="list-disc list-inside space-y-2 text-gray-400">
-                            <li>
-                              <strong className="text-gray-300 font-medium">Implementation:</strong>{' '}
-                              {study.implementation}
-                            </li>
-                            <li>
-                              <strong className="text-gray-300 font-medium">Impact:</strong>{' '}
-                              {study.impact}
-                            </li>
-                          </ul>
-                        </div>
-
-                        <div className="flex flex-wrap gap-2 mt-2">
-                          {study.tech.map((tech) => (
-                            <span
-                              key={tech}
-                              className="text-xs font-semibold px-3 py-1 bg-accent/10 text-accent rounded-full border border-accent/20"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
+                <div className="experience-content">
+                  <div className="company-header">
+                    <div className={`company-logo company-logo--${exp.id}`}>{exp.logo}</div>
+                    <div>
+                      <div className="company-title-row">
+                        <h3>{exp.company}</h3>
+                        {exp.active && <span className="current-badge">Now</span>}
                       </div>
-                    </motion.div>
-                  ))}
+                      <p>{exp.role}</p>
+                    </div>
+                  </div>
+                  <p className="experience-summary">{exp.summary}</p>
+                  <div className="case-study-list">
+                    {exp.caseStudies.map((study, index) => (
+                      <motion.div
+                        key={study.title}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: index * 0.07 }}
+                        className="case-study"
+                      >
+                        <div className="case-study__heading">
+                          <span>{String(index + 1).padStart(2, '0')}</span>
+                          <h4>{study.title}</h4>
+                          <ArrowUpRight size={20} aria-hidden="true" />
+                        </div>
+                        <div className="case-study__body">
+                          <div className="case-study__details">
+                            <p><strong>Challenge</strong>{study.challenge}</p>
+                            <p><strong>Implementation</strong>{study.implementation}</p>
+                            <p><strong>Impact</strong>{study.impact}</p>
+                          </div>
+                          <div className="tech-list">
+                            {study.tech.map((tech) => <span key={tech}>{tech}</span>)}
+                          </div>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
                 </div>
-              </motion.div>
+              </motion.article>
             ))}
           </div>
         </motion.div>

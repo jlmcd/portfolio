@@ -7,9 +7,10 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-primary text-gray-100 font-sans selection:bg-accent selection:text-primary">
+    <div className="site-shell">
+      <a className="skip-link" href="#main-content">Skip to content</a>
       <Header />
-      <main>
+      <main id="main-content">
         <Hero />
         <About />
         <Skills />

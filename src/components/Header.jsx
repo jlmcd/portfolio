@@ -1,33 +1,32 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { ArrowUpRight } from 'lucide-react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-primary/90 backdrop-blur-md shadow-lg shadow-black/20 py-4' : 'bg-transparent py-6'}`}>
-      <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
-        <a href="#" className="text-xl font-bold text-accent tracking-wide hover:text-emerald-400 transition-colors">
-          Jonathan McDonald
+    <header className={`site-header ${isScrolled ? 'site-header--scrolled' : ''}`}>
+      <div className="header-inner">
+        <a href="#top" className="wordmark" aria-label="Jonathan McDonald, back to top">
+          <span className="wordmark-mark">JM</span>
+          <span className="wordmark-name">Jonathan McDonald</span>
         </a>
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+        <nav className="site-nav" aria-label="Primary navigation">
           {['About', 'Skills', 'Experience', 'Contact'].map((item) => (
-            <a 
-              key={item} 
-              href={`#${item.toLowerCase()}`}
-              className="text-gray-300 hover:text-accent transition-colors"
-            >
+            <a key={item} href={`#${item.toLowerCase()}`} className="nav-link">
               {item}
             </a>
           ))}
         </nav>
+        <a className="header-cta" href="mailto:jonathan@mcdonald.email">
+          Let&rsquo;s talk <ArrowUpRight size={16} strokeWidth={1.8} />
+        </a>
       </div>
     </header>
   );

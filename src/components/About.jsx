@@ -1,38 +1,73 @@
 import { motion } from 'framer-motion';
+import { Blocks, HeartHandshake, Sparkles } from 'lucide-react';
+
+const strengths = [
+  {
+    icon: Blocks,
+    number: '01',
+    title: 'Systems thinking',
+    copy: 'I untangle complex integrations, data flows, and legacy code into reliable systems teams can confidently extend.',
+  },
+  {
+    icon: HeartHandshake,
+    number: '02',
+    title: 'Product empathy',
+    copy: 'I keep the person on the other side of the screen in view—from accessibility and performance to the shape of an interaction.',
+  },
+  {
+    icon: Sparkles,
+    number: '03',
+    title: 'Creative rigor',
+    copy: 'A background in music and theatre informs how I collaborate, communicate, and craft experiences with rhythm and intention.',
+  },
+];
 
 const About = () => {
   return (
-    <section id="about" className="py-24 px-6 md:px-12 bg-dark/20">
-      <div className="container mx-auto max-w-4xl text-center">
+    <section id="about" className="section section--about">
+      <div className="section-inner">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
-            About Me
-          </h2>
-          <div className="text-lg text-gray-300 leading-relaxed font-light">
+          <div className="section-heading split-heading">
+            <div>
+              <span className="section-kicker">About / Approach</span>
+              <h2>Engineering with a creative edge.</h2>
+            </div>
             <p>
-              I'm a Software Engineer with a creative edge and a track record of
-              managing large-scale API integrations and complex data pipelines.
-              Originally trained as a musician and theatrical director, I bridge
-              the gap between technical architecture and intuitive design by
-              bringing a collaborative, detail-oriented mindset to every
-              codebase I touch.
-            </p>
-            <br />
-            <p>
-              Whether I'm architecting a RAG pipeline or refactoring legacy
-              reporting engines, my focus remains on building accessible,
-              scalable systems that support real people doing meaningful work. I
-              believe that great software—much like a great production—is built
-              on clear communication, rigorous logic, and a passion for crafting
-              seamless human experiences.
+              I bridge technical architecture and intuitive design with a
+              collaborative, detail-oriented mindset. Whether I&rsquo;m architecting
+              a RAG pipeline or refactoring a legacy reporting engine, I focus on
+              accessible, scalable systems that support meaningful work.
             </p>
           </div>
         </motion.div>
+
+        <div className="strength-grid">
+          {strengths.map((strength, index) => {
+            const Icon = strength.icon;
+            return (
+              <motion.article
+                key={strength.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                className="strength-card"
+              >
+                <div className="strength-card__top">
+                  <Icon size={24} strokeWidth={1.5} />
+                  <span>{strength.number}</span>
+                </div>
+                <h3>{strength.title}</h3>
+                <p>{strength.copy}</p>
+              </motion.article>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

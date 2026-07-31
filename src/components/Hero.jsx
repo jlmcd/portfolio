@@ -1,54 +1,62 @@
 import { motion } from 'framer-motion';
+import { ArrowDownRight, ArrowUpRight, Code2 } from 'lucide-react';
 import headshotImage from '../assets/headshot.jpeg';
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center pt-20 pb-12 px-6 md:px-12">
-      <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <section id="top" className="hero-section">
+      <div className="hero-grid" aria-hidden="true" />
+      <div className="hero-layout">
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="space-y-6"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="hero-copy"
         >
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight">
-            Jonathan <br />
-            McDonald
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-400 font-light">
-            Full-Stack Developer building scalable, user-centric web
-            applications.
+          <div className="eyebrow"><span /> Full-stack software engineer</div>
+          <h1>I build software that makes <em>complex work</em> feel clear.</h1>
+          <p className="hero-intro">
+            I&rsquo;m Jonathan McDonald—a product-minded engineer working across
+            React, TypeScript, C#, data, APIs, and AI to create thoughtful tools
+            for real people.
           </p>
-          <div className="pt-4">
-            <a
-              href="#experience"
-              className="inline-block bg-accent hover:bg-emerald-600 text-primary font-semibold px-8 py-3 rounded-full transition-colors shadow-lg shadow-accent/20"
-            >
-              View My Work
+          <div className="hero-actions">
+            <a href="#experience" className="button button--primary">
+              Explore my work <ArrowDownRight size={18} />
             </a>
+            <a href="mailto:jonathan@mcdonald.email" className="button button--text">
+              Start a conversation <ArrowUpRight size={17} />
+            </a>
+          </div>
+          <div className="hero-meta" aria-label="Professional focus">
+            <span>01 / Frontend systems</span>
+            <span>02 / Data-rich products</span>
+            <span>03 / Human-centered UX</span>
           </div>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex justify-center md:justify-end"
+          initial={{ opacity: 0, scale: 0.96, rotate: 1 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          className="portrait-column"
         >
-          <div className="relative">
-            {/* Soft emerald outer glow */}
-            <div className="absolute inset-0 bg-accent/30 blur-3xl rounded-full scale-110"></div>
-            {/* Squircle frame */}
-            <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl bg-dark/50 flex items-center justify-center">
-              <img
-                src={headshotImage}
-                alt="Jonathan McDonald"
-                className="w-full h-full object-cover opacity-90 transition-opacity duration-500"
-              />
+          <div className="portrait-frame">
+            <img src={headshotImage} alt="Jonathan McDonald" />
+            <div className="portrait-label portrait-label--top">
+              <Code2 size={16} /> Building at Kuder
+            </div>
+            <div className="portrait-label portrait-label--bottom">
+              Denver, Colorado <span className="status-dot" />
             </div>
           </div>
+          <p className="portrait-caption">
+            <span>Creative practice</span>
+            Engineering × music × theatre
+          </p>
         </motion.div>
       </div>
+      <div className="hero-index" aria-hidden="true">JM / 26</div>
     </section>
   );
 };

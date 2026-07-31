@@ -1,51 +1,64 @@
 import { motion } from 'framer-motion';
-import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaSass } from 'react-icons/fa';
-import { SiRedux, SiExpress, SiJavascript, SiPostgresql, SiSocketdotio } from 'react-icons/si';
+import { Asterisk } from 'lucide-react';
 
-const skills = [
-  { name: 'React', icon: <FaReact className="w-10 h-10" /> },
-  { name: 'Redux', icon: <SiRedux className="w-10 h-10" /> },
-  { name: 'Node.js', icon: <FaNodeJs className="w-10 h-10" /> },
-  { name: 'Express.js', icon: <SiExpress className="w-10 h-10" /> },
-  { name: 'HTML5', icon: <FaHtml5 className="w-10 h-10" /> },
-  { name: 'CSS3', icon: <FaCss3Alt className="w-10 h-10" /> },
-  { name: 'JavaScript (ES6+)', icon: <SiJavascript className="w-10 h-10" /> },
-  { name: 'PostgreSQL', icon: <SiPostgresql className="w-10 h-10" /> },
-  { name: 'Sass', icon: <FaSass className="w-10 h-10" /> },
-  { name: 'Socket.io', icon: <SiSocketdotio className="w-10 h-10" /> },
+const skillGroups = [
+  {
+    number: '01',
+    title: 'Languages & UI',
+    skills: ['React', 'TypeScript', 'JavaScript (ES6+)', 'Next.js', 'Redux', 'HTML5', 'CSS3'],
+  },
+  {
+    number: '02',
+    title: 'Backend & Data',
+    skills: ['C#', 'Node.js', 'Express.js', 'GraphQL', 'SQL Server', 'PostgreSQL', 'Elasticsearch', 'Socket.io'],
+  },
+  {
+    number: '03',
+    title: 'Platforms & Practice',
+    skills: ['AWS', 'GCP', 'Docker', 'Git', 'OpenAI', 'RAG', 'API Integration', 'Cursor AI'],
+  },
 ];
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-24 px-6 md:px-12 bg-primary">
-      <div className="container mx-auto max-w-5xl">
+    <section id="skills" className="section section--skills">
+      <div className="section-inner">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-16 text-center">Skills</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-y-12 gap-x-8">
-            {skills.map((skill, index) => (
-              <motion.div
-                key={skill.name}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="flex flex-col items-center justify-center gap-4 text-gray-400 hover:text-accent transition-colors group"
-              >
-                <div className="group-hover:scale-110 transition-transform duration-300">
-                  {skill.icon}
-                </div>
-                <span className="text-sm font-medium tracking-wide text-center">
-                  {skill.name}
-                </span>
-              </motion.div>
-            ))}
+          <div className="section-heading skills-heading">
+            <div>
+              <span className="section-kicker">Capabilities / Toolkit</span>
+              <h2>A practical stack for ambitious products.</h2>
+            </div>
+            <p>From polished interfaces to the services and data beneath them.</p>
           </div>
         </motion.div>
+        <div className="skill-groups">
+          {skillGroups.map((group, index) => (
+            <motion.article
+              key={group.title}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+              className="skill-group"
+            >
+              <div className="skill-group__title">
+                <span>{group.number}</span>
+                <h3>{group.title}</h3>
+              </div>
+              <div className="skill-list">
+                {group.skills.map((skill) => (
+                  <span key={skill}><Asterisk size={13} />{skill}</span>
+                ))}
+              </div>
+            </motion.article>
+          ))}
+        </div>
       </div>
     </section>
   );
